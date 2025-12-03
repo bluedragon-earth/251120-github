@@ -4,7 +4,7 @@ const profile = {
   name: '이창용',
   title: '지구과학 선생님',
   location: '서울, 대한민국',
-  bio: `안녕하세요. 사용자 중심의 깔끔하고 유지보수하기 쉬운 UI를 만드는 것을 좋아합니다. HTML/CSS, JavaScript, Vue/React 기반의 웹 애플리케이션 개발 경험이 있습니다.`,
+  bio: `안녕하세요. 불꽃 지구과학 이창용입니다.`,
   experiences: [
     { role: '프론트엔드 개발자', company: '회사 A', period: '2022 — 현재', desc: 'SPA 개발 및 성능 최적화' },
     { role: '웹 개발자', company: '회사 B', period: '2020 — 2022', desc: '웹 퍼블리싱과 유지보수' }
