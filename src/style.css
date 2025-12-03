@@ -94,3 +94,58 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* Profile styles: clean and minimal */
+.profile-root {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 1rem;
+}
+.profile-card {
+  display: flex;
+  gap: 2rem;
+  max-width: 860px;
+  width: 100%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
+  border-radius: 12px;
+  padding: 2rem;
+  align-items: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+.profile-left {
+  flex: 0 0 120px;
+  display: flex;
+  justify-content: center;
+}
+.avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background-color: #646cff;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+.profile-right { flex: 1; text-align: left }
+.profile-name { margin: 0; font-size: 1.6rem }
+.profile-title { margin-top: 0.3rem; color: #9aa4b2 }
+.profile-bio { margin-top: 1rem; color: #c9d2dc }
+.section-heading { margin-top: 1.4rem; font-size: 1rem; color: #9aa4b2 }
+.experience-list { list-style: none; padding: 0; margin: 0.6rem 0 0 0 }
+.experience-item { display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid rgba(255,255,255,0.03) }
+.experience-item:last-child { border-bottom: none }
+.exp-left { max-width: 52%; }
+.exp-role { font-weight: 600 }
+.exp-company { color: #9aa4b2; font-size: 0.9rem }
+.exp-right { text-align: right; min-width: 150px }
+.exp-period { color: #9aa4b2; font-size: 0.9rem }
+.exp-desc { margin-top: 0.25rem; color: #c9d2dc }
+
+@media (prefers-color-scheme: light) {
+  .profile-card { background: #fafafa; box-shadow: 0 6px 18px rgba(17,24,39,0.06) }
+  .avatar { background-color: #23395a }
+  .profile-bio, .exp-desc { color: #334155 }
+}

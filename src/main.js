@@ -1,24 +1,45 @@
 import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+
+const profile = {
+  name: '이창용',
+  title: '지구과학 선생님',
+  location: '서울, 대한민국',
+  bio: `안녕하세요. 사용자 중심의 깔끔하고 유지보수하기 쉬운 UI를 만드는 것을 좋아합니다. HTML/CSS, JavaScript, Vue/React 기반의 웹 애플리케이션 개발 경험이 있습니다.`,
+  experiences: [
+    { role: '프론트엔드 개발자', company: '회사 A', period: '2022 — 현재', desc: 'SPA 개발 및 성능 최적화' },
+    { role: '웹 개발자', company: '회사 B', period: '2020 — 2022', desc: '웹 퍼블리싱과 유지보수' }
+  ]
+}
+
+function renderExperience(exp) {
+  return `
+    <li class="experience-item">
+      <div class="exp-left">
+        <div class="exp-role">${exp.role}</div>
+        <div class="exp-company">${exp.company}</div>
+      </div>
+      <div class="exp-right">
+        <div class="exp-period">${exp.period}</div>
+        <div class="exp-desc">${exp.desc}</div>
+      </div>
+    </li>`
+}
 
 document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
+  <main class="profile-root">
+    <section class="profile-card">
+      <div class="profile-left">
+        <div class="avatar">HG</div>
+      </div>
+      <div class="profile-right">
+        <h1 class="profile-name">${profile.name}</h1>
+        <div class="profile-title">${profile.title} — <span class="profile-location">${profile.location}</span></div>
+        <p class="profile-bio">${profile.bio}</p>
+        <h2 class="section-heading">경력</h2>
+        <ul class="experience-list">
+          ${profile.experiences.map(renderExperience).join('')}
+        </ul>
+      </div>
+    </section>
+  </main>
 `
-
-setupCounter(document.querySelector('#counter'))
